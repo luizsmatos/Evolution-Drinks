@@ -6,8 +6,6 @@ import AppContext from '../../AppContext/Context';
 import CardDrinks from '../CardDrinks/CardDrinks';
 import './ShowDrinks.css';
 
-// const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
 function ShowDrinks() {
   const { drinksAlcoholic, drinksNonAlcoholic, loading } = useContext(AppContext);
   const [min, setMin] = useState(0);
@@ -19,8 +17,8 @@ function ShowDrinks() {
   };
 
   return (
-    <>
-      <section className="container-search">
+    <section className="content">
+      <div className="container-search">
         <div className="form-search">
           <InputGroup className="">
             <FormControl
@@ -33,7 +31,7 @@ function ShowDrinks() {
             </Button>
           </InputGroup>
         </div>
-      </section>
+      </div>
       <div className="container-search">
         <Pagination
           size="large"
@@ -43,15 +41,15 @@ function ShowDrinks() {
           onChange={() => newDrinks()}
         />
       </div>
-      <section className="container-drinks">
+      <div className="container-drinks">
         { loading ? <Loading /> : drinksAlcoholic.slice(min, max).map((element) => (
           <CardDrinks key={element.idDrink} drink={element} />
         ))}
         { drinksNonAlcoholic.slice(min, max).map((element) => (
           <CardDrinks key={element.idDrink} drink={element} />
         ))}
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 

@@ -23,6 +23,7 @@
 .td-ingredient td div {
   align-items: center;
   display: flex;
+  flex-flow: column;
   justify-content: center;
 }
 
@@ -32,6 +33,10 @@
 
 .content-ingredient table {
   width: 100%;
+}
+
+.image-ingredient {
+  width: 50%;
 }
 
 

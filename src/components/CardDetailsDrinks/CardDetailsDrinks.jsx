@@ -26,27 +26,28 @@ const styles = {
 function CardDetailsDrinks(props) {
   const { drink, name } = props;
 
-  const renderIngredient = (measure, ingredient) => {
-    const isMeasure = measure;
-    return isMeasure && (
-      <td>
-        <div>
-          <img
-            src={`https://www.thecocktaildb.com/images/ingredients/${ingredient}-Small.png`}
-            alt="ingredient"
-            className="image-ingredient"
-          />
-        </div>
-        {isMeasure
-            && <p className="title-drink">{`${measure}` && `${ingredient}`}</p>}
-      </td>
-    );
-  };
   const renderButton = (text) => (
     <Button size="small" color="primary">
       {text}
     </Button>
   );
+
+  const renderIngredient = (measure, ingredient) => {
+    const isIngredient = ingredient;
+
+    return isIngredient && (
+      <td>
+        <div>
+          <img
+            src={`https://www.thecocktaildb.com/images/ingredients/${ingredient}-Medium.png`}
+            alt="ingredient"
+            className="image-ingredient"
+          />
+          { renderButton(`${measure}  ${ingredient}`) }
+        </div>
+      </td>
+    );
+  };
 
   return (
     <div className="container-details">

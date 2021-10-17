@@ -1,7 +1,6 @@
 .container-drinks {
-  width: 100%;
-  margin-left: 20px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
