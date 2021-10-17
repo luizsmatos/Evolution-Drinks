@@ -1,0 +1,15 @@
+.content-drinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.content-drinks tr {
+  margin: 10px;
+}
+
+.show-ingredient {
+  width: 20%;
+  display: flex;
+  justify-content: flex-start;
+}

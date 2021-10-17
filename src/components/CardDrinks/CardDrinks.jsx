@@ -51,7 +51,7 @@ function CardDrinks(props) {
       </CardActionArea>
       <CardActions style={styles.cardActions}>
         <Link
-          to={`/drinks/${idDrink}/${encodeURIComponent(strDrink)
+          to={`/drink/${idDrink}/${encodeURIComponent(strDrink)
             .replaceAll('%20', '-')}`}
         >
           <Button

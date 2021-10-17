@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import {
-  CardActionArea, CardActions, Button,
-} from '@mui/material';
+import { CardActionArea, CardActions, Button } from '@mui/material';
 import './CardDetailsDrinks.css';
 
 const styles = {
@@ -43,7 +42,11 @@ function CardDetailsDrinks(props) {
             alt="ingredient"
             className="image-ingredient"
           />
-          { renderButton(`${measure}  ${ingredient}`) }
+          <Link to={`/ingredient/${ingredient.replaceAll(' ', '-')}`}>
+            <Button size="small" color="primary">
+              {`${measure}  ${ingredient}`}
+            </Button>
+          </Link>
         </div>
       </td>
     );
