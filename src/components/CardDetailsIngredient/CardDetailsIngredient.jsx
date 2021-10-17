@@ -1,27 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import {
-  CardActionArea, CardActions,
-} from '@mui/material';
 import './CardDetailsIngredient.css';
-
-const styles = {
-  media: {
-    height: '220px',
-  },
-  cardContent: {
-    backgroundColor: 'rgb(33,37,41)',
-  },
-  typography: {
-    color: 'white',
-  },
-  cardActions: {
-    backgroundColor: 'rgb(33,37,41)',
-  },
-};
+import CardDrinks from '../CardDrinks/CardDrinks';
 
 function CardDetailsIngredient(props) {
   const { ingredient, name } = props;
@@ -52,22 +32,9 @@ function CardDetailsIngredient(props) {
               <table>
                 <tbody className="content-drinks">
                   { ingredient.map((drink) => (
-                    <tr>
+                    <tr key={drink.idDrink}>
                       <td>
-                        <CardActionArea key={drink.idDrink}>
-                          <CardMedia
-                            component="img"
-                            style={styles.media}
-                            image={drink.strDrinkThumb}
-                            alt={drink.strDrink}
-                          />
-                          <CardContent style={styles.cardContent}>
-                            <Typography style={styles.typography} gutterBottom variant="overline" component="div">
-                              {drink.strDrink}
-                            </Typography>
-                          </CardContent>
-                          <CardActions />
-                        </CardActionArea>
+                        <CardDrinks drink={drink} />
                       </td>
                     </tr>
                   ))}
@@ -82,7 +49,7 @@ function CardDetailsIngredient(props) {
 }
 
 CardDetailsIngredient.propTypes = {
-  ingredient: PropTypes.string.isRequired,
+  ingredient: PropTypes.arrayOf(PropTypes.object).isRequired,
   name: PropTypes.string.isRequired,
 };
 

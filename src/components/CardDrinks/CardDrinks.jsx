@@ -6,7 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {
-  Button, CardActionArea, CardActions, Rating,
+  Button, CardActions, Rating,
 } from '@mui/material';
 import AppContext from '../../AppContext/Context';
 
@@ -36,19 +36,17 @@ function CardDrinks(props) {
   };
   return (
     <Card className="card-drinks" sx={styles.card}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          style={styles.media}
-          image={strDrinkThumb}
-          alt={strDrink}
-        />
-        <CardContent style={styles.cardContent}>
-          <Typography style={styles.typography} gutterBottom variant="overline" component="div">
-            {strDrink}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+      <CardMedia
+        component="img"
+        style={styles.media}
+        image={strDrinkThumb}
+        alt={strDrink}
+      />
+      <CardContent style={styles.cardContent}>
+        <Typography style={styles.typography} gutterBottom variant="overline" component="div">
+          {strDrink}
+        </Typography>
+      </CardContent>
       <CardActions style={styles.cardActions}>
         <Link
           to={`/drink/${idDrink}/${encodeURIComponent(strDrink)

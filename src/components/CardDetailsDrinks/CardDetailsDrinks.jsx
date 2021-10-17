@@ -92,32 +92,30 @@ function CardDetailsDrinks(props) {
             <td className="content-ingredient">
               <table>
                 <tbody>
-                  <tr>
-                    <tr className="td-ingredient">
-                      { renderIngredient(drink.strMeasure1, drink.strIngredient1)}
-                      { renderIngredient(drink.strMeasure2, drink.strIngredient2)}
-                      { renderIngredient(drink.strMeasure3, drink.strIngredient3)}
-                    </tr>
-                    <tr className="td-ingredient">
-                      { renderIngredient(drink.strMeasure4, drink.strIngredient4)}
-                      { renderIngredient(drink.strMeasure5, drink.strIngredient5)}
-                      { renderIngredient(drink.strMeasure6, drink.strIngredient6)}
-                    </tr>
-                    <tr className="td-ingredient">
-                      { renderIngredient(drink.strMeasure7, drink.strIngredient7)}
-                      { renderIngredient(drink.strMeasure8, drink.strIngredient8)}
-                      { renderIngredient(drink.strMeasure9, drink.strIngredient9)}
-                    </tr>
-                    <tr className="td-ingredient">
-                      { renderIngredient(drink.strMeasure10, drink.strIngredient10)}
-                      { renderIngredient(drink.strMeasure11, drink.strIngredient11)}
-                      { renderIngredient(drink.strMeasure12, drink.strIngredient12)}
-                    </tr>
-                    <tr className="td-ingredient">
-                      { renderIngredient(drink.strMeasure13, drink.strIngredient13)}
-                      { renderIngredient(drink.strMeasure14, drink.strIngredient14)}
-                      { renderIngredient(drink.strMeasure15, drink.strIngredient15)}
-                    </tr>
+                  <tr className="td-ingredient">
+                    { renderIngredient(drink.strMeasure1, drink.strIngredient1)}
+                    { renderIngredient(drink.strMeasure2, drink.strIngredient2)}
+                    { renderIngredient(drink.strMeasure3, drink.strIngredient3)}
+                  </tr>
+                  <tr className="td-ingredient">
+                    { renderIngredient(drink.strMeasure4, drink.strIngredient4)}
+                    { renderIngredient(drink.strMeasure5, drink.strIngredient5)}
+                    { renderIngredient(drink.strMeasure6, drink.strIngredient6)}
+                  </tr>
+                  <tr className="td-ingredient">
+                    { renderIngredient(drink.strMeasure7, drink.strIngredient7)}
+                    { renderIngredient(drink.strMeasure8, drink.strIngredient8)}
+                    { renderIngredient(drink.strMeasure9, drink.strIngredient9)}
+                  </tr>
+                  <tr className="td-ingredient">
+                    { renderIngredient(drink.strMeasure10, drink.strIngredient10)}
+                    { renderIngredient(drink.strMeasure11, drink.strIngredient11)}
+                    { renderIngredient(drink.strMeasure12, drink.strIngredient12)}
+                  </tr>
+                  <tr className="td-ingredient">
+                    { renderIngredient(drink.strMeasure13, drink.strIngredient13)}
+                    { renderIngredient(drink.strMeasure14, drink.strIngredient14)}
+                    { renderIngredient(drink.strMeasure15, drink.strIngredient15)}
                   </tr>
                 </tbody>
               </table>

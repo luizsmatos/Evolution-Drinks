@@ -27,7 +27,10 @@ function DetailsIngredient(props) {
     <>
       <Header />
       <section>
-        <CardDetailsIngredient ingredient={detailsIngredient} name={nameIngredient} />
+        <CardDetailsIngredient
+          ingredient={detailsIngredient}
+          name={nameIngredient}
+        />
       </section>
     </>
   );
