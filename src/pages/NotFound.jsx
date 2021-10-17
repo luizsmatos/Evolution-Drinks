@@ -2,7 +2,9 @@ import React from 'react';
 
 function NotFound() {
   return (
-    <div>Eu sou o NotFound!</div>
+    <div className="container">
+      <h1>Página não encontrada!</h1>
+    </div>
   );
 }
 
