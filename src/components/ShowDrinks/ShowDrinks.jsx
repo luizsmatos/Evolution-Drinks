@@ -32,7 +32,7 @@ function ShowDrinks() {
               onChange={(e) => setValue(e.target.value)}
             />
             <Link to={`/search/${encodeSearch}`}>
-              <Button variant="primary" id="button-addon2">
+              <Button onClick={() => {}} variant="primary" id="button-addon2">
                 Pesquisar
               </Button>
             </Link>

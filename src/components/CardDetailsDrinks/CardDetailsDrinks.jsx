@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import CardContent from '@mui/material/CardContent';
@@ -7,9 +7,11 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions, Button } from '@mui/material';
 import './CardDetailsDrinks.css';
 import { stylesDetails } from '../../helpers/styles';
+import AppContext from '../../AppContext/Context';
 
 function CardDetailsDrinks(props) {
   const { drink, name } = props;
+  const { setNameDrink } = useContext(AppContext);
   const decodeName = decodeURIComponent(name).replaceAll('+', ' ');
   const encodeIngredient = (ingredient) => encodeURIComponent(ingredient).replaceAll('%20', '+');
 
@@ -31,8 +33,8 @@ function CardDetailsDrinks(props) {
             className="image-ingredient"
           />
           <Link to={`/ingredient/${encodeIngredient(ingredient)}`}>
-            <Button size="small" color="primary">
-              {`${measure}  ${ingredient}`}
+            <Button onClick={() => { setNameDrink(ingredient); }} size="small" color="primary">
+              {`${measure === null ? '' : measure}  ${ingredient}`}
             </Button>
           </Link>
         </div>

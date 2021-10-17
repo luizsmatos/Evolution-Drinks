@@ -31,7 +31,7 @@ function CardDetailsIngredient(props) {
             <td>
               <table>
                 <tbody className="content-drinks">
-                  { ingredient.map((drink) => (
+                  { ingredient.length > 0 && ingredient.map((drink) => (
                     <tr key={drink.idDrink}>
                       <td>
                         <CardDrinks drink={drink} />
@@ -49,8 +49,12 @@ function CardDetailsIngredient(props) {
 }
 
 CardDetailsIngredient.propTypes = {
-  ingredient: PropTypes.arrayOf(PropTypes.object).isRequired,
+  ingredient: PropTypes.arrayOf(PropTypes.object),
   name: PropTypes.string.isRequired,
+};
+
+CardDetailsIngredient.defaultProps = {
+  ingredient: [],
 };
 
 export default CardDetailsIngredient;

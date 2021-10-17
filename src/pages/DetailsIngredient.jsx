@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header/Header';
 import api from '../services/api';
 import CardDetailsIngredient from '../components/CardDetailsIngredient/CardDetailsIngredient';
+import AppContext from '../AppContext/Context';
 
 function DetailsIngredient(props) {
   const [detailsIngredient, setDetailsIngredient] = useState([]);
+  const { nameDrink } = useContext(AppContext);
   const { match: { params: { name } } } = props;
   const decodeIngredient = decodeURIComponent(name).replaceAll('+', ' ');
 
@@ -20,7 +22,7 @@ function DetailsIngredient(props) {
   };
 
   useEffect(() => {
-    getDetailsIngredient(decodeIngredient);
+    getDetailsIngredient(nameDrink);
   }, []);
 
   return (
