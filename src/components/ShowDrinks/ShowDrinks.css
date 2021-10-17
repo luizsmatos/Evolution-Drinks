@@ -1,0 +1,22 @@
+.container-drinks {
+  width: 100%;
+  margin-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.form-search {
+  width: 40%;
+}
+
+h1 {
+  color: #22526c;
+  text-align: center;
+}

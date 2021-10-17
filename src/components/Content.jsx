@@ -2,13 +2,13 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../pages/Home';
 import NotFound from '../pages/NotFound';
-import ShowDrinks from '../pages/ShowDrinks';
+import DetailsDrinks from '../pages/DetailsDrinks';
 
 function Content() {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/drinks" component={ShowDrinks} />
+      <Route exact path="/drinks" component={DetailsDrinks} />
       <Route path="*" component={NotFound} />
     </Switch>
   );

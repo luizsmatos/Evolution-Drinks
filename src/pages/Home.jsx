@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '../components/Header/Header';
-import LandingPage from '../components/LandingPage/LandingPage';
+import ShowDrinks from '../components/ShowDrinks/ShowDrinks';
 
 function Home() {
   return (
     <>
       <Header />
-      <LandingPage />
+      <ShowDrinks />
     </>
   );
 }
