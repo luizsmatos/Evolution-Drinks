@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { InputGroup, FormControl, Button } from 'react-bootstrap';
 import { Pagination } from '@mui/material';
 import Loading from '../Loading/Loading';
@@ -8,8 +9,10 @@ import './ShowDrinks.css';
 
 function ShowDrinks() {
   const { drinksAlcoholic, drinksNonAlcoholic, loading } = useContext(AppContext);
+  const [value, setValue] = useState('');
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(14);
+  const encodeSearch = encodeURIComponent(value).replaceAll('%20', '+');
 
   const newDrinks = () => {
     setMin(min >= 42 ? 0 : min + 14);
@@ -25,10 +28,14 @@ function ShowDrinks() {
               placeholder="Faça sua pesquisa!"
               aria-label="Faça sua pesquisa!"
               aria-describedby="basic-addon2"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
             />
-            <Button variant="primary" id="button-addon2">
-              Pesquisar
-            </Button>
+            <Link to={`/search/${encodeSearch}`}>
+              <Button variant="primary" id="button-addon2">
+                Pesquisar
+              </Button>
+            </Link>
           </InputGroup>
         </div>
       </div>

@@ -6,24 +6,12 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions, Button } from '@mui/material';
 import './CardDetailsDrinks.css';
-
-const styles = {
-  media: {
-    height: '220px',
-  },
-  cardContent: {
-    backgroundColor: 'rgb(33,37,41)',
-  },
-  typography: {
-    color: 'white',
-  },
-  cardActions: {
-    backgroundColor: 'rgb(33,37,41)',
-  },
-};
+import { stylesDetails } from '../../helpers/styles';
 
 function CardDetailsDrinks(props) {
   const { drink, name } = props;
+  const decodeName = decodeURIComponent(name).replaceAll('+', ' ');
+  const encodeIngredient = (ingredient) => encodeURIComponent(ingredient).replaceAll('%20', '+');
 
   const renderButton = (text) => (
     <Button size="small" color="primary">
@@ -42,7 +30,7 @@ function CardDetailsDrinks(props) {
             alt="ingredient"
             className="image-ingredient"
           />
-          <Link to={`/ingredient/${ingredient.replaceAll(' ', '-')}`}>
+          <Link to={`/ingredient/${encodeIngredient(ingredient)}`}>
             <Button size="small" color="primary">
               {`${measure}  ${ingredient}`}
             </Button>
@@ -61,7 +49,7 @@ function CardDetailsDrinks(props) {
               <h4
                 className="title-drink"
               >
-                {decodeURIComponent(name).replaceAll('-', ' ')}
+                {decodeName}
               </h4>
             </td>
             <td className="td-ingredient"><h4 className="title-drink">Ingredientes</h4></td>
@@ -71,12 +59,12 @@ function CardDetailsDrinks(props) {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  style={styles.media}
+                  style={stylesDetails.media}
                   image={drink.strDrinkThumb}
                   alt={drink.strDrink}
                 />
-                <CardContent style={styles.cardContent}>
-                  <Typography style={styles.typography} gutterBottom variant="overline" component="div">
+                <CardContent style={stylesDetails.cardContent}>
+                  <Typography style={stylesDetails.typography} gutterBottom variant="overline" component="div">
                     <p>Instruções:</p>
                     {drink.strInstructions}
                   </Typography>

@@ -9,6 +9,11 @@
 }
 
 .show-ingredient {
+  width: 40vh;
   display: flex;
   justify-content: flex-start;
+}
+
+.img-ingredient {
+  min-width: 90%;
 }

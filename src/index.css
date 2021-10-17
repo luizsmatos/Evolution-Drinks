@@ -29,3 +29,27 @@ body {
   color: white;
   font-weight: 100;
 }
+
+.button-search {
+  font-size: 30px;
+  color: white;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.button-search:hover {
+  color: rgb(25,118,210);
+}
+
+.title-search {
+  color: white;
+  font-size: 30px;
+  font-weight: 300;
+  margin: 5px;
+}
+
+.content-letter {
+  display: flex;
+  justify-content: center;
+}

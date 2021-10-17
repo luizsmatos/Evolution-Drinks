@@ -7,7 +7,7 @@ import CardDetailsIngredient from '../components/CardDetailsIngredient/CardDetai
 function DetailsIngredient(props) {
   const [detailsIngredient, setDetailsIngredient] = useState([]);
   const { match: { params: { name } } } = props;
-  const nameIngredient = name.replaceAll('-', ' ');
+  const decodeIngredient = decodeURIComponent(name).replaceAll('+', ' ');
 
   const getDetailsIngredient = async (ingredient) => {
     try {
@@ -20,7 +20,7 @@ function DetailsIngredient(props) {
   };
 
   useEffect(() => {
-    getDetailsIngredient(nameIngredient);
+    getDetailsIngredient(decodeIngredient);
   }, []);
 
   return (
@@ -29,7 +29,7 @@ function DetailsIngredient(props) {
       <section>
         <CardDetailsIngredient
           ingredient={detailsIngredient}
-          name={nameIngredient}
+          name={decodeIngredient}
         />
       </section>
     </>

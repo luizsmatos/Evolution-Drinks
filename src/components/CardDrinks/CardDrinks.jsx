@@ -5,52 +5,31 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import {
-  Button, CardActions, Rating,
-} from '@mui/material';
+import { Button, CardActions, Rating } from '@mui/material';
 import AppContext from '../../AppContext/Context';
+import { stylesCard } from '../../helpers/styles';
 
 function CardDrinks(props) {
   const [value, setValue] = useState(0);
   const { setNameDrink } = useContext(AppContext);
   const { drink: { strDrink, strDrinkThumb, idDrink } } = props;
-  const styles = {
-    card: {
-      width: 245,
-      margin: '10px',
-      backgroundColor: 'rgb(33,37,41)',
-    },
-    media: {
-      height: '220px',
-    },
-    cardContent: {
-      backgroundColor: 'rgb(33,37,41)',
-    },
-    typography: {
-      maxHeight: '33px',
-      color: 'white',
-    },
-    cardActions: {
-      backgroundColor: 'rgb(33,37,41)',
-    },
-  };
+  const encodeName = encodeURIComponent(strDrink).replaceAll('%20', '+');
   return (
-    <Card className="card-drinks" sx={styles.card}>
+    <Card className="card-drinks" sx={stylesCard.card}>
       <CardMedia
         component="img"
-        style={styles.media}
+        style={stylesCard.media}
         image={strDrinkThumb}
         alt={strDrink}
       />
-      <CardContent style={styles.cardContent}>
-        <Typography style={styles.typography} gutterBottom variant="overline" component="div">
+      <CardContent style={stylesCard.cardContent}>
+        <Typography style={stylesCard.typography} gutterBottom variant="overline" component="div">
           {strDrink}
         </Typography>
       </CardContent>
-      <CardActions style={styles.cardActions}>
+      <CardActions style={stylesCard.cardActions}>
         <Link
-          to={`/drink/${idDrink}/${encodeURIComponent(strDrink)
-            .replaceAll('%20', '-')}`}
+          to={`/drink/${idDrink}/${encodeName}`}
         >
           <Button
             onClick={() => { setNameDrink(strDrink); }}
