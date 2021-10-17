@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { InputGroup, FormControl, Button } from 'react-bootstrap';
 import { Pagination } from '@mui/material';
+import Loading from '../Loading/Loading';
 import AppContext from '../../AppContext/Context';
 import CardDrinks from '../CardDrinks/CardDrinks';
 import './ShowDrinks.css';
@@ -8,7 +9,7 @@ import './ShowDrinks.css';
 // const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 function ShowDrinks() {
-  const { drinksAlcoholic, drinksNonAlcoholic } = useContext(AppContext);
+  const { drinksAlcoholic, drinksNonAlcoholic, loading } = useContext(AppContext);
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(14);
 
@@ -43,7 +44,7 @@ function ShowDrinks() {
         />
       </div>
       <section className="container-drinks">
-        { drinksAlcoholic.slice(min, max).map((element) => (
+        { loading ? <Loading /> : drinksAlcoholic.slice(min, max).map((element) => (
           <CardDrinks key={element.idDrink} drink={element} />
         ))}
         { drinksNonAlcoholic.slice(min, max).map((element) => (

@@ -6,12 +6,15 @@ import api from '../services/api';
 const AppProvider = ({ children }) => {
   const [drinksAlcoholic, setDrinksAlcoholic] = useState([]);
   const [drinksNonAlcoholic, setDrinksNonAlcoholic] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [nameDrink, setNameDrink] = useState('');
 
   const getDrinksAlcoholic = async () => {
     try {
       const request = await api.get('filter.php?a=Alcoholic');
-      const { data: { drinks } } = await request;
-      return setDrinksAlcoholic(drinks);
+      const { data: { drinks } } = request;
+      setDrinksAlcoholic(drinks);
+      return setLoading(false);
     } catch (error) {
       return error;
     }
@@ -20,8 +23,9 @@ const AppProvider = ({ children }) => {
   const getDrinksNonAlcoholic = async () => {
     try {
       const request = await api.get('filter.php?a=Non_Alcoholic');
-      const { data: { drinks } } = await request;
-      return setDrinksNonAlcoholic(drinks);
+      const { data: { drinks } } = request;
+      setDrinksNonAlcoholic(drinks);
+      return setLoading(false);
     } catch (error) {
       return error;
     }
@@ -32,8 +36,16 @@ const AppProvider = ({ children }) => {
     getDrinksNonAlcoholic();
   }, []);
 
+  const state = {
+    drinksAlcoholic,
+    drinksNonAlcoholic,
+    loading,
+    nameDrink,
+    setNameDrink,
+  };
+
   return (
-    <AppContext.Provider value={{ drinksAlcoholic, drinksNonAlcoholic }}>
+    <AppContext.Provider value={state}>
       { children }
     </AppContext.Provider>
   );

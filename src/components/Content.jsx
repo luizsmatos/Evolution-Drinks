@@ -8,7 +8,7 @@ function Content() {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/drinks" component={DetailsDrinks} />
+      <Route exact path="/drinks/:id/:name" component={DetailsDrinks} />
       <Route path="*" component={NotFound} />
     </Switch>
   );
