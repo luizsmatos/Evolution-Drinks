@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -7,10 +8,12 @@ import Typography from '@mui/material/Typography';
 import {
   Button, CardActionArea, CardActions, Rating,
 } from '@mui/material';
+import AppContext from '../../AppContext/Context';
 
-export default function CardDrinks(props) {
+function CardDrinks(props) {
   const [value, setValue] = useState(0);
-  const { drink: { strDrink, strDrinkThumb } } = props;
+  const { setNameDrink } = useContext(AppContext);
+  const { drink: { strDrink, strDrinkThumb, idDrink } } = props;
   const styles = {
     card: {
       width: 245,
@@ -47,9 +50,18 @@ export default function CardDrinks(props) {
         </CardContent>
       </CardActionArea>
       <CardActions style={styles.cardActions}>
-        <Button size="small" color="primary">
-          Mais Informações
-        </Button>
+        <Link
+          to={`/drinks/${idDrink}/${encodeURIComponent(strDrink)
+            .replaceAll('%20', '-')}`}
+        >
+          <Button
+            onClick={() => { setNameDrink(strDrink); }}
+            size="small"
+            color="primary"
+          >
+            Mais Informações
+          </Button>
+        </Link>
         <Rating
           name="simple-controlled"
           value={value}
@@ -66,5 +78,8 @@ CardDrinks.propTypes = {
   drink: PropTypes.shape({
     strDrink: PropTypes.string.isRequired,
     strDrinkThumb: PropTypes.string.isRequired,
+    idDrink: PropTypes.string.isRequired,
   }).isRequired,
 };
+
+export default CardDrinks;

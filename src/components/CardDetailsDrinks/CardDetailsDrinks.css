@@ -1,0 +1,37 @@
+.container-details {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.container-buttons {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.title-drink {
+  color: white;
+  text-align: center;
+  font-weight: 300;
+}
+
+.td-ingredient td {
+  width: 20%;
+}
+
+.td-ingredient td div {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.content-drink {
+  width: 30%;
+}
+
+.content-ingredient table {
+  width: 100%;
+}
+
+
