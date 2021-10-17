@@ -1,0 +1,17 @@
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Home from '../pages/Home';
+import NotFound from '../pages/NotFound';
+import ShowDrinks from '../pages/ShowDrinks';
+
+function Content() {
+  return (
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/drinks" component={ShowDrinks} />
+      <Route path="*" component={NotFound} />
+    </Switch>
+  );
+}
+
+export default Content;

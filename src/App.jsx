@@ -1,12 +1,14 @@
 import React from 'react';
+import AppProvider from './AppContext/Provider';
+import Content from './components/Content';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Olá</h1>
-      </header>
-    </div>
+    <>
+      <AppProvider>
+        <Content />
+      </AppProvider>
+    </>
   );
 }
 
