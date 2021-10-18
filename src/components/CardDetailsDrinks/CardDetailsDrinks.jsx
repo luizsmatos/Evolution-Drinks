@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea, CardActions, Button } from '@mui/material';
+import { Button } from '@mui/material';
 import './CardDetailsDrinks.css';
 import { stylesDetails } from '../../helpers/styles';
 import AppContext from '../../AppContext/Context';
@@ -58,21 +58,18 @@ function CardDetailsDrinks(props) {
           </tr>
           <tr>
             <td className="content-drink">
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  style={stylesDetails.media}
-                  image={drink.strDrinkThumb}
-                  alt={drink.strDrink}
-                />
-                <CardContent style={stylesDetails.cardContent}>
-                  <Typography style={stylesDetails.typography} gutterBottom variant="overline" component="div">
-                    <p>Instruções:</p>
-                    {drink.strInstructions}
-                  </Typography>
-                </CardContent>
-                <CardActions />
-              </CardActionArea>
+              <CardMedia
+                component="img"
+                style={stylesDetails.media}
+                image={drink.strDrinkThumb}
+                alt={drink.strDrink}
+              />
+              <CardContent style={stylesDetails.cardContent}>
+                <Typography style={stylesDetails.typography} gutterBottom variant="overline" component="div">
+                  <p>Instruções:</p>
+                  {drink.strInstructions}
+                </Typography>
+              </CardContent>
               <div className="container-buttons">
                 { renderButton(drink.strCategory)}
                 { renderButton(drink.strAlcoholic)}

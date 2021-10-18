@@ -6,7 +6,7 @@ import {
   Nav,
 } from 'react-bootstrap';
 import { Avatar, Chip } from '@mui/material';
-import icone from '../../images/icone.png';
+import icone from './icone.png';
 
 function Header() {
   return (
