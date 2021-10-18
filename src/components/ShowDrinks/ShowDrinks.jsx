@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { InputGroup, FormControl, Button } from 'react-bootstrap';
-import { Pagination } from '@mui/material';
+import { Fab } from '@mui/material';
 import Loading from '../Loading/Loading';
 import AppContext from '../../AppContext/Context';
 import CardDrinks from '../CardDrinks/CardDrinks';
@@ -32,7 +32,7 @@ function ShowDrinks() {
               onChange={(e) => setValue(e.target.value)}
             />
             <Link to={`/search/${encodeSearch}`}>
-              <Button onClick={() => {}} variant="dark" id="button-addon2">
+              <Button variant="dark" id="button-addon2">
                 Pesquisar
               </Button>
             </Link>
@@ -40,13 +40,9 @@ function ShowDrinks() {
         </div>
       </div>
       <div className="container-search">
-        <Pagination
-          size="large"
-          count={4}
-          variant="text"
-          color="standard"
-          onChange={() => newDrinks()}
-        />
+        <Fab onClick={() => newDrinks()} variant="extended">
+          Explorar Novos Drinks
+        </Fab>
       </div>
       <div className="container-drinks">
         { loading ? <Loading /> : drinksAlcoholic.slice(min, max).map((element) => (
