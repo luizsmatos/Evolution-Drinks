@@ -1,78 +1,45 @@
-## **Sejam Bem-vindos a Evolution Drinks**
+# **Sejam Bem-vindos a Evolution Drinks**
 
 - [Conceito](#conceito)
 - [Como Iniciar a Aplicação](#como-iniciar-a-aplicação)
-- [Estrutura das Pastas](#porque-isso-é-importante)
-- [Explicação](#conteúdos)
-- [Pontos de melhoria!](#vamos-praticar)
+- [Pontos de melhoria](#vamos-praticar)
 
 
----
-## **Como Iniciar a Aplicação**
+# **Conceito**
+
+O nome Evolution Drinks é idealizado a partir da distribuidora `@evolution.adega`, com a proposta de preencher seu portfólio de produtos e levar conhecimento sobre drinks para os seus clientes.
+ 
+A aplicação foi construída utilizando a API [TheCockTailDB](https://www.thecocktaildb.com/api.php), onde é possível obter receitas de Drinks e quais os são os ingredientes usados para a mesma.
+
+Para consumir a API, foi utilizado a biblioteca `axios`, optei em utiliza-la, por sua facilidade em consumir novos endpoints e fazer conversão em `JSON` automática. 
+
+Os endpoints que estão sendo consumidos ao iniciar a aplicação, os retornos estão sendo armazenados no estado global da ContextAPI, e utilizados pelo componente `ShowDrinks.jsx`, os demais endpoints que foram necessários a utilização, estão sendo armazenados no estado local do próprio componente que faz o request, pois os retornos são acessados no próprio componente ou por seu componente filho.
+
+O layout foi construido com o auxilio dos frameworks [Bootstrap](https://react-bootstrap.netlify.app/) e o [MUI](https://mui.com/), tendo como base a seguinte paleta de cores:
+
+![image](./images/paleta-cores.jpeg)
+
+
+ 
+<br />
+<br />
+
+# **Como Iniciar a Aplicação**
 
 Link : https://evolution-drinks.vercel.app/
 
-Asim que você, acessar o site, irar 
+Assim que você acessar o site, irá cair na nossa rota '`/`', nossa Home, nela é possível desfrutar de vários drinks que já estão presentes ao entrar, clicando em `Mais Informações` nos drinks, você é redirecionado para a página de receita do mesmo, logo após, vemos os ingredientes necessários e suas medidas para fazer tal drink, e logo abaixo da foto do drink, vemos uma pequena instrução em inglês de como executar.
 
-### `npm start`
+ 
+Caso queira pesquisar um novo drink que não esteja na lista inicial, você pode usufruir do campo de busca, clicando em `Home` no cabeçalho, você será redirecionado para a página inicial, nela estará o campo de busca, sinta-se à vontade e procure o drink que tenha interesse. É possível pesquisar drinks que utilizam o mesmo ingrediente, clicando no item de escolha.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Se não souber oque pesquisar, tudo bem! Basta clicar em Pesquisar no campo de texto, que voce sera redirecionado para uma nova pagina, onde é possivel pesquisar pelas letras inicias de cada Drink, não é bacana?
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<br />
+<br />
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Pontos de melhoria
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ - Implementar os testes, utilizando a `React Testing Library`;
+ - Melhoria na responsividade;
