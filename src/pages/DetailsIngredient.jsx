@@ -28,7 +28,7 @@ function DetailsIngredient(props) {
   return (
     <>
       <Header />
-      <section>
+      <section className="content-drinks">
         <CardDetailsIngredient
           ingredient={detailsIngredient}
           name={decodeIngredient}
