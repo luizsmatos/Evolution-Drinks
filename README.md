@@ -1,10 +1,18 @@
-# Getting Started with Create React App
+## **Sejam Bem-vindos a Evolution Drinks**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Conceito](#conceito)
+- [Como Iniciar a Aplicação](#como-iniciar-a-aplicação)
+- [Estrutura das Pastas](#porque-isso-é-importante)
+- [Explicação](#conteúdos)
+- [Pontos de melhoria!](#vamos-praticar)
 
-## Available Scripts
 
-In the project directory, you can run:
+---
+## **Como Iniciar a Aplicação**
+
+Link : https://evolution-drinks.vercel.app/
+
+Asim que você, acessar o site, irar 
 
 ### `npm start`
 

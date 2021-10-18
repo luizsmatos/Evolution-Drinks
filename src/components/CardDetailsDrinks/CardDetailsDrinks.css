@@ -11,9 +11,9 @@
 }
 
 .title-drink {
-  color: white;
+  color: #D9CCA7;
   text-align: center;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .td-ingredient td {
@@ -29,6 +29,7 @@
 
 .content-drink {
   width: 30%;
+  
 }
 
 .content-ingredient table {

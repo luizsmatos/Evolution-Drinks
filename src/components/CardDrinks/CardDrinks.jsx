@@ -34,7 +34,7 @@ function CardDrinks(props) {
           <Button
             onClick={() => { setNameDrink(strDrink); }}
             size="small"
-            color="primary"
+            color="inherit"
           >
             Mais Informações
           </Button>

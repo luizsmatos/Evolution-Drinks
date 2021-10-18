@@ -2,20 +2,20 @@ export const stylesCard = {
   card: {
     width: 245,
     margin: '10px',
-    backgroundColor: 'rgb(33,37,41)',
+    backgroundColor: '#D9CCA7',
   },
   media: {
     height: '220px',
   },
   cardContent: {
-    backgroundColor: 'rgb(33,37,41)',
+    backgroundColor: '#D9CCA7',
   },
   typography: {
     maxHeight: '33px',
-    color: 'white',
+    color: '#261711',
   },
   cardActions: {
-    backgroundColor: 'rgb(33,37,41)',
+    backgroundColor: '#D9CCA7',
   },
 };
 
@@ -24,12 +24,12 @@ export const stylesDetails = {
     height: '220px',
   },
   cardContent: {
-    backgroundColor: 'rgb(33,37,41)',
+    backgroundColor: '#D9CCA7',
   },
   typography: {
-    color: 'white',
+    color: '#261711',
   },
   cardActions: {
-    backgroundColor: 'rgb(33,37,41)',
+    backgroundColor: '#D9CCA7',
   },
 };

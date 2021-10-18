@@ -26,14 +26,14 @@ function Drinks() {
     <>
       <Header />
       <section className="content-letter">
-        <ButtonGroup variant="text" aria-label="text button group">
+        <ButtonGroup color="inherit" variant="text" aria-label="text button group">
           { buttonsAlphabet.map((button) => (
-            <Button onClick={() => { getLetterDrinks(button); }}>{button}</Button>
+            <Button color="inherit" onClick={() => { getLetterDrinks(button); }}>{button}</Button>
           )) }
         </ButtonGroup>
       </section>
-      { !isFetching && <h4 className="title-drink">Ops, Nenhum Drink foi achado!</h4> }
-      { isFetching && (
+      { !isFetching || !letterDrinks ? <h4 className="title-drink title-failed">Ops, Nenhum Drink foi achado!</h4> : null }
+      { isFetching && letterDrinks && (
       <section className="container-drinks">
         { letterDrinks.map((drink) => (
           <CardDrinks key={drink.idDrink} drink={drink} />))}

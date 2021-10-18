@@ -16,7 +16,7 @@ function CardDetailsDrinks(props) {
   const encodeIngredient = (ingredient) => encodeURIComponent(ingredient).replaceAll('%20', '+');
 
   const renderButton = (text) => (
-    <Button size="small" color="primary">
+    <Button size="small" color="inherit">
       {text}
     </Button>
   );
@@ -33,7 +33,7 @@ function CardDetailsDrinks(props) {
             className="image-ingredient"
           />
           <Link to={`/ingredient/${encodeIngredient(ingredient)}`}>
-            <Button onClick={() => { setNameDrink(ingredient); }} size="small" color="primary">
+            <Button onClick={() => { setNameDrink(ingredient); }} size="small" color="inherit">
               {`${measure === null ? '' : measure}  ${ingredient}`}
             </Button>
           </Link>

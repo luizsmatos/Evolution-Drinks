@@ -11,7 +11,7 @@ import icone from '../../images/icone.png';
 function Header() {
   return (
     <header>
-      <Navbar collapseOnSelect expand="xl" bg="dark" variant="dark">
+      <Navbar className="shadow p-3 mb-5" collapseOnSelect expand="xl" bg="dark" varian="light">
         <Container fluid>
           <img
             alt="logo"
@@ -20,13 +20,13 @@ function Header() {
             height="80"
             className="d-inline-block align-top"
           />
-          <Navbar.Brand href="/">Evolution Drinks</Navbar.Brand>
+          <Navbar.Brand href="/"><span className="title-header">Evolution Drinks</span></Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/"><span className="title-header">Home</span></Nav.Link>
             </Nav>
-            <Chip color="primary" avatar={<Avatar>L</Avatar>} label="Luiz Gustavo" />
+            <Chip color="warning" avatar={<Avatar>L</Avatar>} label="Luiz Gustavo" />
           </Navbar.Collapse>
         </Container>
       </Navbar>

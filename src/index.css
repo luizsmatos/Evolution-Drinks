@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  background-color: rgb(31,37,41);
+  background-color: #a68051;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
 }
@@ -26,13 +26,13 @@ body {
 }
 
 .container h1 {
-  color: white;
+  color: #261711;
   font-weight: 100;
 }
 
 .button-search {
   font-size: 30px;
-  color: white;
+  color: #261711;
   padding: 0;
   border: none;
   background: none;
@@ -43,7 +43,7 @@ body {
 }
 
 .title-search {
-  color: white;
+  color: #261711;
   font-size: 30px;
   font-weight: 300;
   margin: 5px;
@@ -52,4 +52,13 @@ body {
 .content-letter {
   display: flex;
   justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: #261711;
+}
+
+.title-failed {
+  margin-top: 100px;
 }
